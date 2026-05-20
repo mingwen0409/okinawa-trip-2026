@@ -1,0 +1,2200 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🏝️ 沖繩旅遊 2026</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500;600;700&display=swap');
+
+/* ═══════════════════════════════════════════════════════════
+   VARIABLES & RESET
+   ═══════════════════════════════════════════════════════════ */
+:root {
+  /* Dark mode colors */
+  --bg-0: #0f0f13;
+  --bg-1: #16161d;
+  --bg-2: #1e1e28;
+  --bg-3: #252535;
+  
+  /* Accent colors */
+  --accent: #c9a96e;
+  --accent2: #7c9edc;
+  --okinawa-teal: #2dd4bf;
+  --okinawa-coral: #fb923c;
+  --okinawa-ocean: #0891b2;
+  --okinawa-sand: #fef3c7;
+  
+  /* Status colors */
+  --green: #5aad8f;
+  --orange: #e07c5a;
+  --red: #d45a5a;
+  --blue: #7c9edc;
+  --purple: #9b7cdc;
+  
+  /* Text colors */
+  --text-0: #f5f5f7;
+  --text-1: #d4d4d8;
+  --text-2: #a1a1aa;
+  --text-3: #71717a;
+  
+  /* Glass effect */
+  --glass-bg: rgba(37, 37, 53, 0.6);
+  --glass-border: rgba(201, 169, 110, 0.15);
+}
+
+html.light {
+  --bg-0: #fafafa;
+  --bg-1: #f5f5f5;
+  --bg-2: #ffffff;
+  --bg-3: #e5e5e5;
+  
+  --accent: #8b6914;
+  --accent2: #3b5998;
+  --okinawa-teal: #0d9488;
+  --okinawa-coral: #ea580c;
+  --okinawa-ocean: #0e7490;
+  --okinawa-sand: #fbbf24;
+  
+  --green: #16a34a;
+  --orange: #ea580c;
+  --red: #dc2626;
+  --blue: #3b82f6;
+  --purple: #9333ea;
+  
+  --text-0: #18181b;
+  --text-1: #3f3f46;
+  --text-2: #71717a;
+  --text-3: #a1a1aa;
+  
+  --glass-bg: rgba(255, 255, 255, 0.8);
+  --glass-border: rgba(139, 105, 20, 0.2);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'DM Sans', -apple-system, sans-serif;
+  background: var(--bg-0);
+  color: var(--text-0);
+  line-height: 1.6;
+  min-height: 100vh;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   HEADER
+   ═══════════════════════════════════════════════════════════ */
+.header {
+  background: linear-gradient(135deg, var(--okinawa-ocean), var(--okinawa-teal));
+  padding: 2rem 1.5rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg width="60" height="60" xmlns="http://www.w3.org/2000/svg"><path d="M30 0L35 15L50 15L38 24L43 40L30 31L17 40L22 24L10 15L25 15Z" fill="rgba(255,255,255,0.03)"/></svg>');
+  opacity: 0.5;
+}
+
+.header-content {
+  position: relative;
+  z-index: 1;
+}
+
+.header h1 {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
+  font-weight: 400;
+  color: white;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.02em;
+}
+
+.header-meta {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.header-meta span {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Theme toggle */
+.theme-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1000;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.3rem;
+  transition: transform 0.2s, background 0.3s;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
+}
+
+.theme-toggle:active {
+  transform: scale(0.95);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   NAVIGATION
+   ═══════════════════════════════════════════════════════════ */
+.nav {
+  display: flex;
+  gap: 0.5rem;
+  padding: 1rem 1.5rem;
+  background: var(--bg-1);
+  overflow-x: auto;
+  border-bottom: 1px solid var(--glass-border);
+  -webkit-overflow-scrolling: touch;
+}
+
+.nav::-webkit-scrollbar {
+  display: none;
+}
+
+.nav-btn {
+  padding: 0.6rem 1.2rem;
+  border-radius: 20px;
+  border: 1.5px solid var(--glass-border);
+  background: var(--bg-2);
+  color: var(--text-1);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s;
+  font-family: 'DM Sans', sans-serif;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.nav-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.nav-btn.active {
+  background: linear-gradient(135deg, var(--accent), var(--okinawa-coral));
+  border-color: transparent;
+  color: white;
+  box-shadow: 0 4px 12px rgba(201, 169, 110, 0.3);
+}
+
+.nav-badge {
+  display: inline-block;
+  background: var(--okinawa-teal);
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.15rem 0.5rem;
+  border-radius: 10px;
+  margin-left: 0.4rem;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   VIEWS
+   ═══════════════════════════════════════════════════════════ */
+.view {
+  display: none;
+  padding: 1.5rem;
+  animation: fadeIn 0.3s;
+}
+
+.view.on {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   ITINERARY VIEW (雙欄佈局)
+   ═══════════════════════════════════════════════════════════ */
+.itinerary-layout {
+  display: grid;
+  gap: 1.5rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+@media (min-width: 1024px) {
+  .itinerary-layout {
+    grid-template-columns: 320px 1fr;
+  }
+}
+
+/* Left sidebar: Day list */
+.day-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.day-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  padding: 1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.day-card:hover {
+  border-color: var(--accent);
+  transform: translateX(4px);
+}
+
+.day-card.active {
+  background: linear-gradient(135deg, var(--okinawa-ocean), var(--okinawa-teal));
+  border-color: transparent;
+  box-shadow: 0 8px 24px rgba(8, 145, 178, 0.3);
+}
+
+.day-card.active .day-date,
+.day-card.active .day-title,
+.day-card.active .day-subtitle {
+  color: white;
+}
+
+.day-date {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.3rem;
+}
+
+.day-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.1rem;
+  color: var(--text-0);
+  margin-bottom: 0.2rem;
+}
+
+.day-subtitle {
+  font-size: 0.85rem;
+  color: var(--text-2);
+}
+
+/* Right panel: Day details */
+.day-detail {
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  padding: 2rem;
+  min-height: 500px;
+}
+
+.detail-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.detail-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.8rem;
+  color: var(--text-0);
+  margin-bottom: 0.5rem;
+}
+
+.detail-meta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  font-size: 0.9rem;
+  color: var(--text-2);
+}
+
+/* Activity items */
+.activities {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.activity {
+  background: var(--bg-2);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  padding: 1rem;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  cursor: move;
+  transition: all 0.2s;
+}
+
+.activity:hover {
+  border-color: var(--accent);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.activity.dragging {
+  opacity: 0.4;
+  cursor: grabbing;
+}
+
+.activity-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  background: linear-gradient(135deg, var(--okinawa-teal), var(--okinawa-ocean));
+}
+
+.activity-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.activity-time {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 0.3rem;
+  outline: none;
+}
+
+.activity-time:focus {
+  color: var(--okinawa-coral);
+}
+
+.activity-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-0);
+  margin-bottom: 0.3rem;
+  outline: none;
+}
+
+.activity-name:focus {
+  color: var(--okinawa-teal);
+}
+
+.activity-desc {
+  font-size: 0.85rem;
+  color: var(--text-2);
+  line-height: 1.5;
+  outline: none;
+}
+
+.activity-desc:focus {
+  color: var(--text-1);
+}
+
+.activity-tags {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.tag {
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.tag.must {
+  background: rgba(90, 173, 143, 0.2);
+  color: var(--green);
+  border: 1px solid var(--green);
+}
+
+.tag.food {
+  background: rgba(251, 146, 60, 0.2);
+  color: var(--okinawa-coral);
+  border: 1px solid var(--okinawa-coral);
+}
+
+.tag.culture {
+  background: rgba(155, 124, 220, 0.2);
+  color: var(--purple);
+  border: 1px solid var(--purple);
+}
+
+.tag.free {
+  background: rgba(124, 158, 220, 0.2);
+  color: var(--blue);
+  border: 1px solid var(--blue);
+}
+
+.tag.none {
+  background: transparent;
+  color: var(--text-3);
+  border: 1px dashed var(--text-3);
+}
+
+.activity-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-direction: column;
+}
+
+.activity-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  border: none;
+  background: var(--bg-3);
+  color: var(--text-2);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  transition: all 0.2s;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.activity-btn:hover {
+  background: var(--accent);
+  color: white;
+}
+
+.activity-btn.delete:hover {
+  background: var(--red);
+}
+
+/* Transport section */
+.transport {
+  background: linear-gradient(135deg, rgba(124, 158, 220, 0.1), rgba(155, 124, 220, 0.1));
+  border: 1px solid var(--blue);
+  border-radius: 12px;
+  padding: 1rem;
+  margin: 1.5rem 0;
+}
+
+.transport-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--blue);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.8rem;
+}
+
+.transport-route {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 1rem;
+  align-items: center;
+}
+
+.transport-station {
+  text-align: center;
+}
+
+.transport-label {
+  font-size: 0.7rem;
+  color: var(--text-3);
+  margin-bottom: 0.3rem;
+}
+
+.transport-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-0);
+  outline: none;
+}
+
+.transport-name:focus {
+  color: var(--blue);
+}
+
+.transport-arrow {
+  font-size: 1.5rem;
+  color: var(--blue);
+}
+
+/* Accommodation */
+.accommodation {
+  background: linear-gradient(135deg, rgba(155, 124, 220, 0.1), rgba(201, 169, 110, 0.1));
+  border: 1px solid var(--purple);
+  border-radius: 12px;
+  padding: 1rem;
+  margin: 1.5rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.accom-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-0);
+}
+
+.accom-status {
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.accom-status.booked {
+  background: rgba(90, 173, 143, 0.2);
+  color: var(--green);
+  border: 1px solid var(--green);
+}
+
+.accom-status.pending {
+  background: rgba(224, 124, 90, 0.2);
+  color: var(--orange);
+  border: 1px solid var(--orange);
+}
+
+/* Notes */
+.notes {
+  margin-top: 2rem;
+}
+
+.notes-title {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-2);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.notes-textarea {
+  width: 100%;
+  min-height: 80px;
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: 1px solid var(--glass-border);
+  background: var(--bg-2);
+  color: var(--text-0);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  resize: vertical;
+  outline: none;
+  transition: border 0.2s;
+}
+
+.notes-textarea:focus {
+  border-color: var(--accent);
+}
+
+/* Expenses */
+.expenses {
+  margin-top: 1.5rem;
+}
+
+.expenses-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.expenses-title {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-2);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.add-expense-btn {
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  border: 1px solid var(--accent);
+  background: transparent;
+  color: var(--accent);
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: 'DM Sans', sans-serif;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.add-expense-btn:hover {
+  background: var(--accent);
+  color: white;
+}
+
+.expense-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.expense-item {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  padding: 0.5rem;
+  background: var(--bg-2);
+  border: 1px solid var(--glass-border);
+  border-radius: 8px;
+}
+
+.expense-input {
+  flex: 1;
+  padding: 0.3rem 0.5rem;
+  border: none;
+  background: transparent;
+  color: var(--text-0);
+  font-size: 0.85rem;
+  font-family: 'DM Sans', sans-serif;
+  outline: none;
+}
+
+.expense-amount {
+  width: 100px;
+  text-align: right;
+  padding: 0.3rem 0.5rem;
+  border: none;
+  background: transparent;
+  color: var(--accent);
+  font-size: 0.85rem;
+  font-weight: 600;
+  font-family: 'DM Sans', sans-serif;
+  outline: none;
+}
+
+.expense-delete {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  border: none;
+  background: transparent;
+  color: var(--text-3);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.expense-delete:hover {
+  background: var(--red);
+  color: white;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   BUDGET VIEW
+   ═══════════════════════════════════════════════════════════ */
+.budget-grid {
+  display: grid;
+  gap: 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.budget-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  padding: 1.5rem;
+}
+
+.budget-card-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.3rem;
+  color: var(--text-0);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.budget-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.budget-row:last-child {
+  border-bottom: none;
+}
+
+.budget-label {
+  font-size: 0.9rem;
+  color: var(--text-1);
+}
+
+.budget-value {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.budget-input {
+  width: 120px;
+  padding: 0.4rem 0.6rem;
+  border-radius: 8px;
+  border: 1px solid var(--glass-border);
+  background: var(--bg-2);
+  color: var(--accent);
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: 'DM Sans', sans-serif;
+  text-align: right;
+  outline: none;
+}
+
+.budget-input:focus {
+  border-color: var(--accent);
+}
+
+.budget-quick-btns {
+  display: flex;
+  gap: 0.5rem;
+  margin-left: 0.5rem;
+}
+
+.budget-quick-btn {
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  border: 1px solid var(--glass-border);
+  background: var(--bg-2);
+  color: var(--text-2);
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.budget-quick-btn:hover {
+  background: var(--accent);
+  color: white;
+  border-color: var(--accent);
+}
+
+.budget-summary {
+  background: linear-gradient(135deg, var(--okinawa-ocean), var(--okinawa-teal));
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-top: 1rem;
+  color: white;
+}
+
+.budget-summary-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+}
+
+.budget-summary-label {
+  font-size: 0.9rem;
+}
+
+.budget-summary-value {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.budget-indicator {
+  display: inline-block;
+  margin-left: 0.5rem;
+  font-size: 1rem;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   ACCOUNTING VIEW
+   ═══════════════════════════════════════════════════════════ */
+.accounting-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  color: var(--text-2);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.stat-value {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.8rem;
+  color: var(--accent);
+}
+
+.stat-unit {
+  font-size: 0.9rem;
+  color: var(--text-3);
+  margin-left: 0.3rem;
+}
+
+.accounting-chart {
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.chart-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.2rem;
+  color: var(--text-0);
+  margin-bottom: 1rem;
+}
+
+.chart-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.chart-bar-row {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.chart-bar-label {
+  width: 80px;
+  font-size: 0.85rem;
+  color: var(--text-1);
+  flex-shrink: 0;
+}
+
+.chart-bar-track {
+  flex: 1;
+  height: 24px;
+  background: var(--bg-2);
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+}
+
+.chart-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--okinawa-teal), var(--okinawa-coral));
+  border-radius: 12px;
+  transition: width 0.5s ease;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 0.5rem;
+}
+
+.chart-bar-amount {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: white;
+}
+
+.accounting-table {
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.table-header {
+  background: var(--bg-2);
+  padding: 1rem 1.5rem;
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.2rem;
+  color: var(--text-0);
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.table-row {
+  display: grid;
+  grid-template-columns: 100px 120px 100px 1fr;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--glass-border);
+  align-items: center;
+}
+
+.table-row:last-child {
+  border-bottom: none;
+}
+
+.table-row:hover {
+  background: var(--bg-2);
+}
+
+.table-cell {
+  font-size: 0.85rem;
+  color: var(--text-1);
+}
+
+.table-cell.date {
+  font-weight: 600;
+  color: var(--text-0);
+}
+
+.table-cell.amount {
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.table-cell.items {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.expense-tag {
+  font-size: 0.7rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  background: var(--bg-3);
+  color: var(--text-2);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   TODO VIEW
+   ═══════════════════════════════════════════════════════════ */
+.todo-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.todo-section {
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  padding: 1.5rem;
+}
+
+.todo-section-header {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.urgency-icon {
+  font-size: 1.2rem;
+}
+
+.todo-section-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.2rem;
+  color: var(--text-0);
+}
+
+.todo-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.todo-item {
+  display: flex;
+  gap: 0.8rem;
+  align-items: flex-start;
+  padding: 0.8rem;
+  background: var(--bg-2);
+  border: 1px solid var(--glass-border);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.todo-item:hover {
+  border-color: var(--accent);
+}
+
+.todo-item.completed {
+  opacity: 0.6;
+}
+
+.todo-checkbox {
+  width: 20px;
+  height: 20px;
+  border-radius: 6px;
+  border: 2px solid var(--glass-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+  transition: all 0.2s;
+}
+
+.todo-item.completed .todo-checkbox {
+  background: var(--green);
+  border-color: var(--green);
+  color: white;
+}
+
+.todo-text {
+  flex: 1;
+  font-size: 0.95rem;
+  color: var(--text-0);
+}
+
+.todo-item.completed .todo-text {
+  text-decoration: line-through;
+  color: var(--text-3);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   MODAL
+   ═══════════════════════════════════════════════════════════ */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+  z-index: 2000;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.modal.open {
+  display: flex;
+}
+
+.modal-content {
+  background: var(--bg-1);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  padding: 2rem;
+  max-width: 500px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.5rem;
+  color: var(--text-0);
+  margin-bottom: 1.5rem;
+}
+
+.modal-field {
+  margin-bottom: 1.2rem;
+}
+
+.modal-label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-2);
+  margin-bottom: 0.5rem;
+}
+
+.modal-input,
+.modal-textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: 1px solid var(--glass-border);
+  background: var(--bg-2);
+  color: var(--text-0);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border 0.2s;
+}
+
+.modal-input:focus,
+.modal-textarea:focus {
+  border-color: var(--accent);
+}
+
+.modal-textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 0.8rem;
+  justify-content: flex-end;
+  margin-top: 1.5rem;
+}
+
+.modal-btn {
+  padding: 0.7rem 1.5rem;
+  border-radius: 20px;
+  border: 1px solid var(--glass-border);
+  background: var(--bg-2);
+  color: var(--text-1);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  transition: all 0.2s;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.modal-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.modal-btn.primary {
+  background: linear-gradient(135deg, var(--accent), var(--okinawa-coral));
+  border-color: transparent;
+  color: white;
+}
+
+.modal-btn.primary:hover {
+  box-shadow: 0 4px 12px rgba(201, 169, 110, 0.4);
+  transform: translateY(-1px);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   UTILITY CLASSES
+   ═══════════════════════════════════════════════════════════ */
+.empty-state {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--text-3);
+}
+
+.empty-state-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+.empty-state-text {
+  font-size: 1rem;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .table-row {
+    grid-template-columns: 80px 1fr;
+    gap: 0.5rem;
+  }
+  
+  .table-cell.location,
+  .table-cell.items {
+    grid-column: 1 / -1;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- Theme Toggle -->
+<div class="theme-toggle" onclick="toggleTheme()">
+  <span class="theme-icon">🌙</span>
+</div>
+
+<!-- Header -->
+<div class="header">
+  <div class="header-content">
+    <h1>🏝️ 沖繩之旅 2026</h1>
+    <div class="header-meta">
+      <span>6/12 (四) — 6/15 (日)</span>
+      <span>自駕遊</span>
+      <span>3人成行</span>
+    </div>
+  </div>
+</div>
+
+<!-- Navigation -->
+<div class="nav">
+  <button class="nav-btn active" onclick="switchView('itinerary')">
+    📅 行程
+  </button>
+  <button class="nav-btn" onclick="switchView('budget')">
+    💰 預算
+  </button>
+  <button class="nav-btn" onclick="switchView('accounting')">
+    📊 記帳總覽
+  </button>
+  <button class="nav-btn" onclick="switchView('todo')">
+    ✅ 待辦 <span class="nav-badge" id="todo-badge">0</span>
+  </button>
+</div>
+
+<!-- Itinerary View -->
+<div class="view on" id="view-itinerary">
+  <div class="itinerary-layout">
+    <!-- Left: Day list -->
+    <div class="day-list" id="day-list">
+      <!-- Generated by JS -->
+    </div>
+    
+    <!-- Right: Day detail -->
+    <div class="day-detail" id="day-detail">
+      <div class="empty-state">
+        <div class="empty-state-icon">🗓️</div>
+        <div class="empty-state-text">請選擇左側日期查看行程</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Budget View -->
+<div class="view" id="view-budget">
+  <div class="budget-grid">
+    <div class="budget-card">
+      <div class="budget-card-title">💱 匯率設定</div>
+      <div class="budget-row">
+        <div class="budget-label">日圓 ¥ → 新台幣 NT$</div>
+        <div style="display: flex; align-items: center;">
+          <input type="number" class="budget-input" id="exchange-rate" value="0.21" step="0.01" onchange="calcBudget()">
+          <div class="budget-quick-btns">
+            <button class="budget-quick-btn" onclick="setRate(0.19)">0.19</button>
+            <button class="budget-quick-btn" onclick="setRate(0.21)">0.21</button>
+            <button class="budget-quick-btn" onclick="setRate(0.23)">0.23</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="budget-card">
+      <div class="budget-card-title">👥 個人預算</div>
+      <div class="budget-row">
+        <div class="budget-label">人員 A 總預算（¥）</div>
+        <input type="number" class="budget-input" id="budget-a" value="50000" onchange="calcBudget()">
+      </div>
+      <div class="budget-row">
+        <div class="budget-label">人員 B 總預算（¥）</div>
+        <input type="number" class="budget-input" id="budget-b" value="50000" onchange="calcBudget()">
+      </div>
+      <div class="budget-row">
+        <div class="budget-label">人員 C 總預算（¥）</div>
+        <input type="number" class="budget-input" id="budget-c" value="50000" onchange="calcBudget()">
+      </div>
+    </div>
+    
+    <div class="budget-card">
+      <div class="budget-card-title">🏨 估算支出</div>
+      <div class="budget-row">
+        <div class="budget-label">住宿總金額（¥）</div>
+        <input type="number" class="budget-input" id="accom-total" value="30000" onchange="calcBudget()">
+      </div>
+      <div class="budget-row">
+        <div class="budget-label">租車總金額（¥）</div>
+        <input type="number" class="budget-input" id="car-total" value="20000" onchange="calcBudget()">
+      </div>
+      <div class="budget-row">
+        <div class="budget-label">其他固定支出（¥）</div>
+        <input type="number" class="budget-input" id="other-total" value="5000" onchange="calcBudget()">
+      </div>
+    </div>
+    
+    <div class="budget-card">
+      <div class="budget-summary">
+        <div class="budget-summary-row">
+          <div class="budget-summary-label">總預算</div>
+          <div class="budget-summary-value" id="total-budget">¥150,000</div>
+        </div>
+        <div class="budget-summary-row">
+          <div class="budget-summary-label">固定支出</div>
+          <div class="budget-summary-value" id="total-fixed">¥55,000</div>
+        </div>
+        <div class="budget-summary-row">
+          <div class="budget-summary-label">剩餘生活費</div>
+          <div class="budget-summary-value" id="remaining">¥95,000</div>
+        </div>
+        <div class="budget-summary-row" style="border-top: 1px solid rgba(255,255,255,0.2); padding-top: 1rem; margin-top: 0.5rem;">
+          <div class="budget-summary-label">每日可用金額</div>
+          <div class="budget-summary-value">
+            <span id="daily-budget">¥23,750</span>
+            <span class="budget-indicator" id="budget-indicator">✓</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Accounting View -->
+<div class="view" id="view-accounting">
+  <div class="accounting-stats" id="accounting-stats">
+    <!-- Generated by JS -->
+  </div>
+  
+  <div class="accounting-chart">
+    <div class="chart-title">📍 各地區花費佔比</div>
+    <div class="chart-bars" id="location-chart">
+      <!-- Generated by JS -->
+    </div>
+  </div>
+  
+  <div class="accounting-table">
+    <div class="table-header">💳 每日明細</div>
+    <div id="daily-expenses">
+      <!-- Generated by JS -->
+    </div>
+  </div>
+</div>
+
+<!-- TODO View -->
+<div class="view" id="view-todo">
+  <div class="todo-sections">
+    <div class="todo-section">
+      <div class="todo-section-header">
+        <div class="urgency-icon">🔴</div>
+        <div class="todo-section-title">立刻處理</div>
+      </div>
+      <div class="todo-list" id="todo-urgent">
+        <!-- Generated by JS -->
+      </div>
+    </div>
+    
+    <div class="todo-section">
+      <div class="todo-section-header">
+        <div class="urgency-icon">🟠</div>
+        <div class="todo-section-title">近期完成</div>
+      </div>
+      <div class="todo-list" id="todo-soon">
+        <!-- Generated by JS -->
+      </div>
+    </div>
+    
+    <div class="todo-section">
+      <div class="todo-section-header">
+        <div class="urgency-icon">🟡</div>
+        <div class="todo-section-title">到時候再做</div>
+      </div>
+      <div class="todo-list" id="todo-later">
+        <!-- Generated by JS -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal" id="modal">
+  <div class="modal-content">
+    <div class="modal-title" id="modal-title">新增活動</div>
+    <div class="modal-field">
+      <label class="modal-label">時間</label>
+      <input type="text" class="modal-input" id="modal-time" placeholder="例：09:00">
+    </div>
+    <div class="modal-field">
+      <label class="modal-label">活動名稱</label>
+      <input type="text" class="modal-input" id="modal-name" placeholder="例：古宇利大橋">
+    </div>
+    <div class="modal-field">
+      <label class="modal-label">說明</label>
+      <textarea class="modal-textarea" id="modal-desc" placeholder="簡短描述..."></textarea>
+    </div>
+    <div class="modal-field">
+      <label class="modal-label">圖標</label>
+      <input type="text" class="modal-input" id="modal-icon" placeholder="例：🌉" maxlength="2">
+    </div>
+    <div class="modal-actions">
+      <button class="modal-btn" onclick="closeModal()">取消</button>
+      <button class="modal-btn primary" onclick="saveActivity()">儲存</button>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ═══════════════════════════════════════════════════════════
+   STATE & DATA
+   ═══════════════════════════════════════════════════════════ */
+const STORAGE_KEY = 'okinawa26';
+
+// Helper functions
+const g = (k) => {
+  const data = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+  return data[k];
+};
+
+const s = (k, v) => {
+  const data = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+  data[k] = v;
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+};
+
+// Initialize default data
+const initData = () => {
+  if (!g('days')) {
+    s('days', [
+      {
+        id: 'd1',
+        date: '6/12',
+        title: 'Day 1',
+        subtitle: '那霸市區 • 國際通',
+        location: '那霸',
+        activities: [
+          { id: 'a1', time: '09:00', name: '抵達那霸機場', desc: '取車、確認租車保險', icon: '✈️', tag: 'must' },
+          { id: 'a2', time: '11:00', name: '首里城', desc: '琉球王國歷史遺跡', icon: '🏯', tag: 'culture' },
+          { id: 'a3', time: '14:00', name: '國際通購物', desc: '沖繩最熱鬧的商店街', icon: '🛍️', tag: 'none' },
+          { id: 'a4', time: '18:00', name: '牧志公設市場', desc: '海鮮料理晚餐', icon: '🦞', tag: 'food' }
+        ],
+        transport: { from: '那霸機場', to: '飯店' },
+        accommodation: { name: '那霸市區飯店', status: 'booked' },
+        notes: '第一天以市區為主，輕鬆適應時差',
+        expenses: [
+          { id: 'e1', item: '機場租車', amount: 8000 },
+          { id: 'e2', item: '午餐', amount: 3500 },
+          { id: 'e3', item: '首里城門票', amount: 2400 },
+          { id: 'e4', item: '晚餐', amount: 4500 }
+        ]
+      },
+      {
+        id: 'd2',
+        date: '6/13',
+        title: 'Day 2',
+        subtitle: '北部海岸 • 美麗海',
+        location: '本部',
+        activities: [
+          { id: 'a5', time: '08:00', name: '出發北上', desc: '經國道58號前往本部半島', icon: '🚗', tag: 'none' },
+          { id: 'a6', time: '10:00', name: '美麗海水族館', desc: '世界最大的水族箱', icon: '🐠', tag: 'must' },
+          { id: 'a7', time: '14:00', name: '古宇利島', desc: '古宇利大橋＋愛心岩', icon: '🌉', tag: 'must' },
+          { id: 'a8', time: '17:00', name: '海邊晚餐', desc: '觀賞夕陽', icon: '🌅', tag: 'food' }
+        ],
+        transport: { from: '那霸', to: '本部' },
+        accommodation: { name: '本部度假村', status: 'pending' },
+        notes: '開車時間較長，注意時間分配',
+        expenses: [
+          { id: 'e5', item: '早餐', amount: 2000 },
+          { id: 'e6', item: '水族館門票', amount: 5700 },
+          { id: 'e7', item: '午餐', amount: 3800 }
+        ]
+      },
+      {
+        id: 'd3',
+        date: '6/14',
+        title: 'Day 3',
+        subtitle: '中部海濱 • 美國村',
+        location: '北谷',
+        activities: [
+          { id: 'a9', time: '09:00', name: '萬座毛', desc: '象鼻岩海岸絕景', icon: '🪨', tag: 'free' },
+          { id: 'a10', time: '12:00', name: '美國村', desc: '購物＋午餐', icon: '🎡', tag: 'none' },
+          { id: 'a11', time: '15:00', name: '殘波岬', desc: '斷崖海景、燈塔', icon: '🗼', tag: 'free' },
+          { id: 'a12', time: '18:00', name: '日落海灘', desc: '欣賞夕陽', icon: '🏖️', tag: 'free' }
+        ],
+        transport: { from: '本部', to: '北谷' },
+        accommodation: { name: '美國村飯店', status: 'booked' },
+        notes: '中部景點密集，可彈性調整',
+        expenses: [
+          { id: 'e8', item: '早餐', amount: 2200 },
+          { id: 'e9', item: '午餐', amount: 4000 },
+          { id: 'e10', item: '購物', amount: 5000 }
+        ]
+      },
+      {
+        id: 'd4',
+        date: '6/15',
+        title: 'Day 4',
+        subtitle: '返程 • 最後採買',
+        location: '那霸',
+        activities: [
+          { id: 'a13', time: '08:00', name: '飯店早餐', desc: '退房＋整理行李', icon: '🧳', tag: 'none' },
+          { id: 'a14', time: '10:00', name: '新都心購物', desc: 'AEON＋3A百貨', icon: '🏬', tag: 'none' },
+          { id: 'a15', time: '13:00', name: '波上宮', desc: '琉球八社之首', icon: '⛩️', tag: 'culture' },
+          { id: 'a16', time: '15:00', name: '機場還車', desc: '預留充足時間', icon: '🚗', tag: 'must' },
+          { id: 'a17', time: '17:00', name: '登機返台', desc: '結束旅程', icon: '✈️', tag: 'must' }
+        ],
+        transport: { from: '美國村', to: '機場' },
+        accommodation: null,
+        notes: '預留足夠時間還車＋辦理登機',
+        expenses: [
+          { id: 'e11', item: '早餐', amount: 0 },
+          { id: 'e12', item: '午餐', amount: 3000 },
+          { id: 'e13', item: '伴手禮', amount: 8000 }
+        ]
+      }
+    ]);
+  }
+  
+  if (!g('todos')) {
+    s('todos', [
+      { id: 't1', urgency: 'urgent', text: '預訂租車（含保險）', completed: false },
+      { id: 't2', urgency: 'urgent', text: '確認飯店訂房', completed: false },
+      { id: 't3', urgency: 'urgent', text: '購買機票', completed: false },
+      { id: 't4', urgency: 'soon', text: '兌換日幣現金', completed: false },
+      { id: 't5', urgency: 'soon', text: '下載離線地圖', completed: false },
+      { id: 't6', urgency: 'soon', text: '準備防曬用品', completed: false },
+      { id: 't7', urgency: 'later', text: '規劃餐廳清單', completed: false },
+      { id: 't8', urgency: 'later', text: '準備浮潛裝備', completed: false },
+      { id: 't9', urgency: 'later', text: '列出伴手禮清單', completed: false }
+    ]);
+  }
+  
+  if (!g('theme')) {
+    s('theme', 'dark');
+  }
+};
+
+/* ═══════════════════════════════════════════════════════════
+   THEME TOGGLE
+   ═══════════════════════════════════════════════════════════ */
+const toggleTheme = () => {
+  const html = document.documentElement;
+  const icon = document.querySelector('.theme-icon');
+  
+  if (html.classList.contains('light')) {
+    html.classList.remove('light');
+    icon.textContent = '🌙';
+    s('theme', 'dark');
+  } else {
+    html.classList.add('light');
+    icon.textContent = '☀️';
+    s('theme', 'light');
+  }
+};
+
+const loadTheme = () => {
+  const theme = g('theme') || 'dark';
+  const html = document.documentElement;
+  const icon = document.querySelector('.theme-icon');
+  
+  if (theme === 'light') {
+    html.classList.add('light');
+    icon.textContent = '☀️';
+  } else {
+    icon.textContent = '🌙';
+  }
+};
+
+/* ═══════════════════════════════════════════════════════════
+   VIEW SWITCHING
+   ═══════════════════════════════════════════════════════════ */
+let currentView = 'itinerary';
+let selectedDayId = null;
+
+const switchView = (viewName) => {
+  // Hide all views
+  document.querySelectorAll('.view').forEach(v => v.classList.remove('on'));
+  // Show selected view
+  document.getElementById(`view-${viewName}`).classList.add('on');
+  
+  // Update nav buttons
+  document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
+  event.target.classList.add('active');
+  
+  currentView = viewName;
+  
+  // Render view content
+  if (viewName === 'accounting') renderAccounting();
+  if (viewName === 'todo') renderTodos();
+};
+
+/* ═══════════════════════════════════════════════════════════
+   ITINERARY VIEW
+   ═══════════════════════════════════════════════════════════ */
+const renderDayList = () => {
+  const days = g('days') || [];
+  const container = document.getElementById('day-list');
+  
+  container.innerHTML = days.map(day => `
+    <div class="day-card ${selectedDayId === day.id ? 'active' : ''}" onclick="selectDay('${day.id}')">
+      <div class="day-date">${day.date}</div>
+      <div class="day-title">${day.title}</div>
+      <div class="day-subtitle">${day.subtitle}</div>
+    </div>
+  `).join('');
+  
+  // Auto-select first day if none selected
+  if (!selectedDayId && days.length > 0) {
+    selectDay(days[0].id);
+  }
+};
+
+const selectDay = (dayId) => {
+  selectedDayId = dayId;
+  renderDayList();
+  renderDayDetail();
+};
+
+const renderDayDetail = () => {
+  const days = g('days') || [];
+  const day = days.find(d => d.id === selectedDayId);
+  const container = document.getElementById('day-detail');
+  
+  if (!day) {
+    container.innerHTML = `
+      <div class="empty-state">
+        <div class="empty-state-icon">🗓️</div>
+        <div class="empty-state-text">請選擇左側日期查看行程</div>
+      </div>
+    `;
+    return;
+  }
+  
+  container.innerHTML = `
+    <div class="detail-header">
+      <div class="detail-title">${day.title} - ${day.subtitle}</div>
+      <div class="detail-meta">
+        <span>📍 ${day.location}</span>
+        <span>📅 ${day.date}</span>
+      </div>
+    </div>
+    
+    ${day.transport ? `
+      <div class="transport">
+        <div class="transport-title">🚗 交通</div>
+        <div class="transport-route">
+          <div class="transport-station">
+            <div class="transport-label">出發</div>
+            <div class="transport-name" contenteditable="true" 
+                 onblur="updateTransport('${day.id}', 'from', this.textContent)">${day.transport.from}</div>
+          </div>
+          <div class="transport-arrow">→</div>
+          <div class="transport-station">
+            <div class="transport-label">抵達</div>
+            <div class="transport-name" contenteditable="true"
+                 onblur="updateTransport('${day.id}', 'to', this.textContent)">${day.transport.to}</div>
+          </div>
+        </div>
+      </div>
+    ` : ''}
+    
+    <div class="activities" id="activities-${day.id}">
+      ${day.activities.map((act, idx) => `
+        <div class="activity" draggable="true" data-id="${act.id}" data-index="${idx}">
+          <div class="activity-icon">${act.icon}</div>
+          <div class="activity-content">
+            <div class="activity-time" contenteditable="true" 
+                 onblur="updateActivity('${day.id}', '${act.id}', 'time', this.textContent)">${act.time}</div>
+            <div class="activity-name" contenteditable="true"
+                 onblur="updateActivity('${day.id}', '${act.id}', 'name', this.textContent)">${act.name}</div>
+            <div class="activity-desc" contenteditable="true"
+                 onblur="updateActivity('${day.id}', '${act.id}', 'desc', this.textContent)">${act.desc}</div>
+            <div class="activity-tags">
+              <div class="tag ${act.tag}" onclick="cycleTag('${day.id}', '${act.id}')">${getTagText(act.tag)}</div>
+            </div>
+          </div>
+          <div class="activity-actions">
+            <button class="activity-btn delete" onclick="deleteActivity('${day.id}', '${act.id}')">🗑️</button>
+          </div>
+        </div>
+      `).join('')}
+    </div>
+    
+    <button class="add-expense-btn" style="margin-top: 1rem;" onclick="openActivityModal('${day.id}')">
+      ➕ 新增活動
+    </button>
+    
+    ${day.accommodation ? `
+      <div class="accommodation">
+        <div class="accom-name">🏨 ${day.accommodation.name}</div>
+        <div class="accom-status ${day.accommodation.status}" onclick="toggleAccomStatus('${day.id}')">
+          ${day.accommodation.status === 'booked' ? '✓ 已訂房' : '⏳ 待訂房'}
+        </div>
+      </div>
+    ` : ''}
+    
+    <div class="notes">
+      <div class="notes-title">📝 備註</div>
+      <textarea class="notes-textarea" 
+                onblur="updateNotes('${day.id}', this.value)">${day.notes || ''}</textarea>
+    </div>
+    
+    <div class="expenses">
+      <div class="expenses-header">
+        <div class="expenses-title">💳 花費</div>
+        <button class="add-expense-btn" onclick="addExpense('${day.id}')">➕ 新增</button>
+      </div>
+      <div class="expense-list">
+        ${(day.expenses || []).map(exp => `
+          <div class="expense-item">
+            <input type="text" class="expense-input" value="${exp.item}" 
+                   onblur="updateExpense('${day.id}', '${exp.id}', 'item', this.value)">
+            <input type="number" class="expense-amount" value="${exp.amount}" 
+                   onblur="updateExpense('${day.id}', '${exp.id}', 'amount', this.value)">
+            <button class="expense-delete" onclick="deleteExpense('${day.id}', '${exp.id}')">🗑️</button>
+          </div>
+        `).join('')}
+      </div>
+    </div>
+  `;
+  
+  // Setup drag and drop
+  setupDragDrop(day.id);
+};
+
+const getTagText = (tag) => {
+  const tags = {
+    'must': '⭐ 必去',
+    'food': '🍜 美食',
+    'culture': '🎭 文化',
+    'free': '💚 免費',
+    'none': '・無標籤'
+  };
+  return tags[tag] || '・無標籤';
+};
+
+const cycleTag = (dayId, actId) => {
+  const days = g('days');
+  const day = days.find(d => d.id === dayId);
+  const activity = day.activities.find(a => a.id === actId);
+  
+  const tagCycle = ['none', 'must', 'food', 'culture', 'free'];
+  const currentIndex = tagCycle.indexOf(activity.tag);
+  const nextIndex = (currentIndex + 1) % tagCycle.length;
+  
+  activity.tag = tagCycle[nextIndex];
+  s('days', days);
+  renderDayDetail();
+};
+
+const updateActivity = (dayId, actId, field, value) => {
+  const days = g('days');
+  const day = days.find(d => d.id === dayId);
+  const activity = day.activities.find(a => a.id === actId);
+  
+  activity[field] = value.trim();
+  s('days', days);
+};
+
+const deleteActivity = (dayId, actId) => {
+  if (!confirm('確定要刪除此活動嗎？')) return;
+  
+  const days = g('days');
+  const day = days.find(d => d.id === dayId);
+  day.activities = day.activities.filter(a => a.id !== actId);
+  
+  s('days', days);
+  renderDayDetail();
+};
+
+const updateTransport = (dayId, field, value) => {
+  const days = g('days');
+  const day = days.find(d => d.id === dayId);
+  
+  if (!day.transport) day.transport = {};
+  day.transport[field] = value.trim();
+  
+  s('days', days);
+};
+
+const toggleAccomStatus = (dayId) => {
+  const days = g('days');
+  const day = days.find(d => d.id === dayId);
+  
+  if (day.accommodation) {
+    day.accommodation.status = day.accommodation.status === 'booked' ? 'pending' : 'booked';
+    s('days', days);
+    renderDayDetail();
+  }
+};
+
+const updateNotes = (dayId, value) => {
+  const days = g('days');
+  const day = days.find(d => d.id === dayId);
+  day.notes = value.trim();
+  s('days', days);
+};
+
+const addExpense = (dayId) => {
+  const days = g('days');
+  const day = days.find(d => d.id === dayId);
+  
+  if (!day.expenses) day.expenses = [];
+  day.expenses.push({
+    id: 'e' + Date.now(),
+    item: '新項目',
+    amount: 0
+  });
+  
+  s('days', days);
+  renderDayDetail();
+};
+
+const updateExpense = (dayId, expId, field, value) => {
+  const days = g('days');
+  const day = days.find(d => d.id === dayId);
+  const expense = day.expenses.find(e => e.id === expId);
+  
+  expense[field] = field === 'amount' ? parseFloat(value) || 0 : value.trim();
+  s('days', days);
+};
+
+const deleteExpense = (dayId, expId) => {
+  const days = g('days');
+  const day = days.find(d => d.id === dayId);
+  day.expenses = day.expenses.filter(e => e.id !== expId);
+  
+  s('days', days);
+  renderDayDetail();
+};
+
+// Drag and drop for activities
+let draggedElement = null;
+let draggedIndex = null;
+
+const setupDragDrop = (dayId) => {
+  const activities = document.querySelectorAll(`#activities-${dayId} .activity`);
+  
+  activities.forEach((activity, index) => {
+    activity.addEventListener('dragstart', (e) => {
+      draggedElement = activity;
+      draggedIndex = index;
+      activity.classList.add('dragging');
+    });
+    
+    activity.addEventListener('dragend', (e) => {
+      activity.classList.remove('dragging');
+      draggedElement = null;
+      draggedIndex = null;
+    });
+    
+    activity.addEventListener('dragover', (e) => {
+      e.preventDefault();
+      const afterElement = getDragAfterElement(activity.parentElement, e.clientY);
+      const dragging = document.querySelector('.dragging');
+      
+      if (afterElement == null) {
+        activity.parentElement.appendChild(dragging);
+      } else {
+        activity.parentElement.insertBefore(dragging, afterElement);
+      }
+    });
+    
+    activity.addEventListener('drop', (e) => {
+      e.preventDefault();
+      
+      const days = g('days');
+      const day = days.find(d => d.id === dayId);
+      
+      // Get new order from DOM
+      const newOrder = Array.from(document.querySelectorAll(`#activities-${dayId} .activity`))
+        .map(el => el.dataset.id);
+      
+      // Reorder activities array
+      day.activities = newOrder.map(id => day.activities.find(a => a.id === id));
+      
+      s('days', days);
+      renderDayDetail();
+    });
+  });
+};
+
+const getDragAfterElement = (container, y) => {
+  const draggableElements = [...container.querySelectorAll('.activity:not(.dragging)')];
+  
+  return draggableElements.reduce((closest, child) => {
+    const box = child.getBoundingClientRect();
+    const offset = y - box.top - box.height / 2;
+    
+    if (offset < 0 && offset > closest.offset) {
+      return { offset: offset, element: child };
+    } else {
+      return closest;
+    }
+  }, { offset: Number.NEGATIVE_INFINITY }).element;
+};
+
+/* ═══════════════════════════════════════════════════════════
+   ACTIVITY MODAL
+   ═══════════════════════════════════════════════════════════ */
+let modalDayId = null;
+
+const openActivityModal = (dayId) => {
+  modalDayId = dayId;
+  document.getElementById('modal-title').textContent = '新增活動';
+  document.getElementById('modal-time').value = '';
+  document.getElementById('modal-name').value = '';
+  document.getElementById('modal-desc').value = '';
+  document.getElementById('modal-icon').value = '📍';
+  document.getElementById('modal').classList.add('open');
+};
+
+const closeModal = () => {
+  document.getElementById('modal').classList.remove('open');
+  modalDayId = null;
+};
+
+const saveActivity = () => {
+  const time = document.getElementById('modal-time').value.trim();
+  const name = document.getElementById('modal-name').value.trim();
+  const desc = document.getElementById('modal-desc').value.trim();
+  const icon = document.getElementById('modal-icon').value.trim() || '📍';
+  
+  if (!name) {
+    alert('請輸入活動名稱');
+    return;
+  }
+  
+  const days = g('days');
+  const day = days.find(d => d.id === modalDayId);
+  
+  day.activities.push({
+    id: 'a' + Date.now(),
+    time: time || '00:00',
+    name,
+    desc,
+    icon,
+    tag: 'none'
+  });
+  
+  s('days', days);
+  closeModal();
+  renderDayDetail();
+};
+
+// Click outside modal to close
+document.getElementById('modal').addEventListener('click', (e) => {
+  if (e.target === e.currentTarget) closeModal();
+});
+
+/* ═══════════════════════════════════════════════════════════
+   BUDGET VIEW
+   ═══════════════════════════════════════════════════════════ */
+const setRate = (rate) => {
+  document.getElementById('exchange-rate').value = rate;
+  calcBudget();
+};
+
+const calcBudget = () => {
+  const rate = parseFloat(document.getElementById('exchange-rate').value) || 0.21;
+  const budgetA = parseFloat(document.getElementById('budget-a').value) || 0;
+  const budgetB = parseFloat(document.getElementById('budget-b').value) || 0;
+  const budgetC = parseFloat(document.getElementById('budget-c').value) || 0;
+  const accom = parseFloat(document.getElementById('accom-total').value) || 0;
+  const car = parseFloat(document.getElementById('car-total').value) || 0;
+  const other = parseFloat(document.getElementById('other-total').value) || 0;
+  
+  const totalBudget = budgetA + budgetB + budgetC;
+  const totalFixed = accom + car + other;
+  const remaining = totalBudget - totalFixed;
+  const dailyBudget = remaining / 4; // 4 days
+  
+  document.getElementById('total-budget').textContent = `¥${totalBudget.toLocaleString()}`;
+  document.getElementById('total-fixed').textContent = `¥${totalFixed.toLocaleString()}`;
+  document.getElementById('remaining').textContent = `¥${remaining.toLocaleString()}`;
+  document.getElementById('daily-budget').textContent = `¥${dailyBudget.toLocaleString()}`;
+  
+  // Budget indicator
+  const indicator = document.getElementById('budget-indicator');
+  if (dailyBudget >= 20000) {
+    indicator.textContent = '✓';
+  } else if (dailyBudget >= 15000) {
+    indicator.textContent = '⚠';
+  } else {
+    indicator.textContent = '⚠️';
+  }
+};
+
+/* ═══════════════════════════════════════════════════════════
+   ACCOUNTING VIEW
+   ═══════════════════════════════════════════════════════════ */
+const renderAccounting = () => {
+  const days = g('days') || [];
+  
+  // Calculate stats
+  let totalSpent = 0;
+  let maxDay = { amount: 0, date: '' };
+  const locationTotals = {};
+  
+  days.forEach(day => {
+    const dayTotal = (day.expenses || []).reduce((sum, exp) => sum + (exp.amount || 0), 0);
+    totalSpent += dayTotal;
+    
+    if (dayTotal > maxDay.amount) {
+      maxDay = { amount: dayTotal, date: day.date };
+    }
+    
+    if (!locationTotals[day.location]) locationTotals[day.location] = 0;
+    locationTotals[day.location] += dayTotal;
+  });
+  
+  const avgDaily = totalSpent / days.length;
+  
+  // Render stats
+  document.getElementById('accounting-stats').innerHTML = `
+    <div class="stat-card">
+      <div class="stat-label">總花費</div>
+      <div class="stat-value">
+        ¥${totalSpent.toLocaleString()}
+        <span class="stat-unit">JPY</span>
+      </div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">最高單日</div>
+      <div class="stat-value">
+        ¥${maxDay.amount.toLocaleString()}
+        <span class="stat-unit">${maxDay.date}</span>
+      </div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">日均花費</div>
+      <div class="stat-value">
+        ¥${Math.round(avgDaily).toLocaleString()}
+        <span class="stat-unit">JPY</span>
+      </div>
+    </div>
+  `;
+  
+  // Render location chart
+  const maxLocation = Math.max(...Object.values(locationTotals));
+  document.getElementById('location-chart').innerHTML = Object.entries(locationTotals)
+    .map(([location, amount]) => {
+      const percentage = (amount / maxLocation) * 100;
+      return `
+        <div class="chart-bar-row">
+          <div class="chart-bar-label">${location}</div>
+          <div class="chart-bar-track">
+            <div class="chart-bar-fill" style="width: ${percentage}%">
+              <span class="chart-bar-amount">¥${amount.toLocaleString()}</span>
+            </div>
+          </div>
+        </div>
+      `;
+    }).join('');
+  
+  // Render daily expenses table
+  document.getElementById('daily-expenses').innerHTML = days.map(day => {
+    const dayTotal = (day.expenses || []).reduce((sum, exp) => sum + (exp.amount || 0), 0);
+    return `
+      <div class="table-row">
+        <div class="table-cell date">${day.date}</div>
+        <div class="table-cell location">${day.location}</div>
+        <div class="table-cell amount">¥${dayTotal.toLocaleString()}</div>
+        <div class="table-cell items">
+          ${(day.expenses || []).map(exp => 
+            `<span class="expense-tag">${exp.item} ¥${exp.amount.toLocaleString()}</span>`
+          ).join('')}
+        </div>
+      </div>
+    `;
+  }).join('');
+};
+
+/* ═══════════════════════════════════════════════════════════
+   TODO VIEW
+   ═══════════════════════════════════════════════════════════ */
+const renderTodos = () => {
+  const todos = g('todos') || [];
+  const urgentContainer = document.getElementById('todo-urgent');
+  const soonContainer = document.getElementById('todo-soon');
+  const laterContainer = document.getElementById('todo-later');
+  
+  const renderTodoItem = (todo) => `
+    <div class="todo-item ${todo.completed ? 'completed' : ''}" onclick="toggleTodo('${todo.id}')">
+      <div class="todo-checkbox">
+        ${todo.completed ? '✓' : ''}
+      </div>
+      <div class="todo-text">${todo.text}</div>
+    </div>
+  `;
+  
+  urgentContainer.innerHTML = todos
+    .filter(t => t.urgency === 'urgent')
+    .map(renderTodoItem)
+    .join('') || '<div class="empty-state-text" style="padding: 1rem;">無項目</div>';
+  
+  soonContainer.innerHTML = todos
+    .filter(t => t.urgency === 'soon')
+    .map(renderTodoItem)
+    .join('') || '<div class="empty-state-text" style="padding: 1rem;">無項目</div>';
+  
+  laterContainer.innerHTML = todos
+    .filter(t => t.urgency === 'later')
+    .map(renderTodoItem)
+    .join('') || '<div class="empty-state-text" style="padding: 1rem;">無項目</div>';
+  
+  updateTodoBadge();
+};
+
+const toggleTodo = (todoId) => {
+  const todos = g('todos');
+  const todo = todos.find(t => t.id === todoId);
+  todo.completed = !todo.completed;
+  s('todos', todos);
+  renderTodos();
+};
+
+const updateTodoBadge = () => {
+  const todos = g('todos') || [];
+  const incomplete = todos.filter(t => !t.completed).length;
+  document.getElementById('todo-badge').textContent = incomplete;
+};
+
+/* ═══════════════════════════════════════════════════════════
+   INITIALIZATION
+   ═══════════════════════════════════════════════════════════ */
+document.addEventListener('DOMContentLoaded', () => {
+  initData();
+  loadTheme();
+  renderDayList();
+  renderTodos();
+  updateTodoBadge();
+  calcBudget();
+});
+</script>
+
+</body>
+</html>
